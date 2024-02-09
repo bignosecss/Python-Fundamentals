@@ -28,7 +28,7 @@ import time
 # 文件关闭
 # f.close()
 
-# with open 语法操作文件,可以自动关闭33
+# with open 语法操作文件,可以自动关闭
 with open("test-text.txt", "r", encoding="UTF-8") as f:
     for line in f:
         print(f"每一行数据是：{line}")
