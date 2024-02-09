@@ -31,5 +31,5 @@ def append_to_file(file_name, data):
 
 
 if __name__ == '__main__':
-    # print_file_info("../bill.txt")
-    append_to_file("../test-write.txt", " hello ")
+    print_file_info("../../bill.txt")
+    # append_to_file("../test-write.txt", " hello ")

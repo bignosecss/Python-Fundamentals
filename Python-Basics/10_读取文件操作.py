@@ -1,7 +1,7 @@
 # 打开文件
 import time
 
-# f = open("test-text.txt", "r", encoding="UTF-8")
+# f = open("../test-text.txt", "r", encoding="UTF-8")
 # print(type(f))
 
 # 读取文件 - read()
@@ -29,6 +29,6 @@ import time
 # f.close()
 
 # with open 语法操作文件,可以自动关闭
-with open("test-text.txt", "r", encoding="UTF-8") as f:
+with open("../test-text.txt", "r", encoding="UTF-8") as f:
     for line in f:
         print(f"每一行数据是：{line}")
