@@ -10,21 +10,22 @@ f.close()
 # 获取河南省数据
 # JSON 数据转换为 Python 字典
 data_dict = json.loads(data)
-henan_cities_data = data_dict["areaTree"][0]["children"][3]["children"]
+hubei_cities_data = data_dict["areaTree"][0]["children"][6]["children"]
 # 准备数据为元组并放入 list
 data_list = []
-for city_data in henan_cities_data:
+for city_data in hubei_cities_data:
     city_name = city_data["name"] + "市"
     city_confirm = city_data["total"]["confirm"]
     data_list.append((city_name, city_confirm))
-# 手动添加济源市的数据
-data_list.append(("济源市", 5))
+# 手动添加神农架和恩施数据
+data_list.append(("神农架林区", 11))
+data_list.append(("恩施土家族苗族自治州", 252))
 # 构建地图
 my_map = Map()
-my_map.add("河南省疫情分布", data_list, "河南")
+my_map.add("湖北省疫情分布", data_list, "湖北")
 # 设置全局选项
 my_map.set_global_opts(
-    title_opts=TitleOpts(title="河南省疫情地图"),
+    title_opts=TitleOpts(title="湖北省疫情地图"),
     visualmap_opts=VisualMapOpts(
         is_show=True,  # 是否显示
         is_piecewise=True,  # 是否分段
@@ -39,4 +40,4 @@ my_map.set_global_opts(
     )
 )
 # 绘图
-my_map.render("河南省疫情地图.html")
+my_map.render("湖北省疫情地图.html")
